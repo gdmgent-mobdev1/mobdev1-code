@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>Webaudio API</title>
+</head>
+
+<body>
+	<div id="boombox">
+		<div class="boombox-handle"></div>
+		<div class="boombox-body">
+			<section class="master-controls">
+				<input type="range" id="volume" class="control-volume" min="0" max="2" value="1" list="gain-vals" step="0.01" />
+				<label for="volume">VOL</label>
+				<input type="range" id="panner" class="control-panner" list="pan-vals" min="-1" max="1" value="0" step="0.01" />
+				<label for="panner">PAN</label>
+				<button class="control-power" data-power="on" role="switch">
+					<span>On/Off</span>
+				</button>
+			</section>
+			<section class="tape">
+				<button data-playing="false" class="tape-controls-play" role="switch">
+					<span>Play/Pause</span>
+				</button>
+			</section>
+		</div>
+	</div>
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
+
+:root {
+  --color-black: #000;
+  --color-white: #FFF;
+  --color-firebase-yellow: #FFCA28;
+  --color-firebase-amber: #FFA000;
+  --color-firebase-orange: #F57C00;
+  --color-firebase-blue: #039BE5;
+  --color-firebase-navy: #2C384A;
+  --color-firebase-coral: #FF8A65;
+  --color-firebase-grey: #ECEFF1;
+  --color-firebase-red: #dc4f3f;
+}
+
+*,
+*:after,
+*::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--color-white);
+	font-family: 'Source Sans Pro', sans-serif;
+	color: var(--color-firebase-navy);
+}
+
+button {
+	border: none;
+	outline: none;
+	background: transparent;
+}
+
+a {
+	color: var(--color-firebase-navy);
+	text-decoration: underline;
+}
+
+.hide {
+  display: none;
+}
+
+#appWrapper header,
+#appWrapper main {
+  padding: 25px 20px;
+}
+
+#appWrapper header {
+	display: flex;
+	justify-content: space-between;
+	height: 70px;
+	background-color: var(--color-firebase-blue);
+	padding: 25px 20px;
+}
+
+#appWrapper header .logo {
+	color: var(--color-white);
+	font-size: 1.3rem;
+}
+
+#appWrapper header ul {
+  display: flex;
+	list-style-type: none;
+}
+
+#appWrapper ul li {
+  margin-right: 20px;
+}
+
+#appWrapper ul li:last-child {
+  margin-right: 0px;
+}
+
+#appWrapper header a.nav-link {
+	color: var(--color-white);
+	text-decoration: none;
+	padding: 10px;
+}
+
+#appWrapper header a.nav-link.selected {
+	text-decoration: underline;
+}
