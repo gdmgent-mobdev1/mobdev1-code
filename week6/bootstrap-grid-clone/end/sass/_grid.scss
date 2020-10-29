@@ -1,0 +1,97 @@
+@use 'sass:math';
+
+/**
+ * Variables
+ */
+
+$grid-gutter-width: 30px;
+$amount-of-cols: 12;
+$sm-width: 540px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
+/**
+ * Create Container
+ */
+
+@mixin make-container($gutter: $grid-gutter-width) {
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter / 2;
+  margin-left: -$gutter / 2;
+}
+
+/**
+ * Columns Mixin
+ */
+
+@mixin make-col-ready($gutter: $grid-gutter-width) {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+}
+
+@mixin row-cols($col: 1, $count: 12) {
+  & {
+    @include make-col-ready();
+    // flex: 0 0 math.percentage($col / $count);
+    flex-basis: math.percentage($col / $count);
+    max-width: math.percentage($col / $count);
+  }
+}
+
+/**
+ * Media Queries Mixins
+ */
+
+@mixin sm {
+  @media (min-width: #{$sm-width}) and (max-width: #{$md-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$lg-width}) and (max-width: #{$xl-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$xl-width}) {
+    @content;
+  }
+}
+
+/**
+ * Create the magic!
+ */
+
+.container-fluid { @include make-container(); }
+.row { @include make-row(); }
+
+@for $i from 1 through $amount-of-cols {
+   .col-#{$i} { @include row-cols($i) }
+}
+
+@for $i from 1 through $amount-of-cols {
+   @include sm { .col-sm-#{$i} { @include row-cols($i, $amount-of-cols) } }
+   @include md { .col-md-#{$i} { @include row-cols($i, $amount-of-cols) } }
+   @include lg { .col-lg-#{$i} { @include row-cols($i, $amount-of-cols) } }
+   @include xl { .col-xl-#{$i} { @include row-cols($i, $amount-of-cols) } }
+}

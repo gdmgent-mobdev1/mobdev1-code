@@ -1,0 +1,121 @@
+/**
+ * Solutions
+ */
+
+@use "sass:map";
+
+/**
+ * 1.
+ */
+
+a {
+	text-decoration: none;
+
+	&::hover {
+		text-decoration: underline;
+	}
+}
+
+/**
+ * 2.
+ */
+
+@mixin roundedBorder($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+.box-square {
+	@include roundedBorder(0);
+}
+
+.box-square {
+	@include roundedBorder(10px);
+}
+
+/**
+ * 3.
+ */
+
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		padding: 6px 12px;
+		text-decoration: none;
+	}
+}
+
+/**
+ * 4.
+ */
+
+%styled-block {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend %styled-block;
+  color: green;
+}
+.error {
+  @extend %styled-block;
+  color: red;
+}
+.warning {
+  @extend %styled-block;
+  color: yellow;
+}
+
+/**
+ * 5.
+ */
+
+$colors: (
+  h1: darkorange,
+  h2: royalblue,
+  h3: springgreen
+);
+
+@each $key, $value in $colors {
+  #{$key} { color: $value }
+}
+
+/**
+ * 6.
+ */
+
+$white: #FFF;
+$blue: #55acee;
+$darkblue: #3b5998;
+
+%social {
+  min-width: 100px;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+a.twitter {
+  @extend %social;
+  background: $blue;
+  color: $white;
+}
+
+span.facebook {
+  @extend %social;
+  background: $darkblue;
+  color: $white;
+}

@@ -1,0 +1,25 @@
+$colors: (
+  "red": #FF0000,
+  "blue": #0000FF,
+  "green": #00FF00,
+  "cyan": cyan
+);
+
+%box {
+  display: flex;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+}
+
+@each $key, $value in $colors {
+  .box-#{$key} {
+    @extend %box;
+    background-color: $value;
+  }
+}
+

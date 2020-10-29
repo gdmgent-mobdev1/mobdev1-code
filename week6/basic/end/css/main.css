@@ -1,0 +1,103 @@
+/**
+ * Solutions
+ */
+/**
+ * 1.
+ */
+a {
+  text-decoration: none;
+}
+a::hover {
+  text-decoration: underline;
+}
+
+/**
+ * 2.
+ */
+.box-square {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+.box-square {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/**
+ * 3.
+ */
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+/**
+ * 4.
+ */
+.warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.warning {
+  color: yellow;
+}
+
+/**
+ * 5.
+ */
+h1 {
+  color: darkorange;
+}
+
+h2 {
+  color: royalblue;
+}
+
+h3 {
+  color: springgreen;
+}
+
+/**
+ * 6.
+ */
+span.facebook, a.twitter {
+  min-width: 100px;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+a.twitter {
+  background: #55acee;
+  color: #FFF;
+}
+
+span.facebook {
+  background: #3b5998;
+  color: #FFF;
+}
+
+/*# sourceMappingURL=main.css.map */
