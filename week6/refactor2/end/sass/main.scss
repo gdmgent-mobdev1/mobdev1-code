@@ -1,0 +1,84 @@
+/**
+ * Variables
+ */
+
+$color-black: #000;
+$font: poppins, sans-serif;
+
+/**
+ * Universal
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+	background-color: $color-black;
+	font-family: $font;
+}
+
+/**
+ * Mixins
+ */
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin background-cover($url) {
+  background: url($url);
+  background-size: cover;
+  background-position: center;
+}
+
+/**
+ * The Main Navigation
+ */
+
+.main-nav {
+	@include position(absolute, 50%, auto, auto, 50%);
+	@include size(600px, 150px);
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0;
+
+	li {
+		@include position(absolute);
+		@include size(200px, 200px);
+		list-style: none;
+		background: $color-black;
+		transform: rotate(45deg);
+		transition: 0.5s;
+		margin: -100px;
+		overflow: hidden;
+		opacity: 0.5;
+
+		&:hover { opacity: 1; }
+    & .bg {
+			@include size(100%, 100%);
+			transform: scale(1.1);
+		}
+
+    @for $i from 1 through 5 {
+      &.item#{$i} {
+        @if $i == 1 { left:0 }
+        @else { left: (($i)-1)*25% }
+
+        @if $i % 2 == 0 { bottom: 0 }
+        @else { top: 0 }
+
+        & .bg {
+          @include background-cover("./assets/img#{$i}.jpg");
+        }
+      }
+    }
+	}
+}

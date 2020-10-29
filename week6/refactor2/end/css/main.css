@@ -1,0 +1,98 @@
+/**
+ * Variables
+ */
+/**
+ * Universal
+ */
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: poppins, sans-serif;
+}
+
+/**
+ * Mixins
+ */
+/**
+ * The Main Navigation
+ */
+.main-nav {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: 600px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+.main-nav li {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  list-style: none;
+  background: #000;
+  transform: rotate(45deg);
+  transition: 0.5s;
+  margin: -100px;
+  overflow: hidden;
+  opacity: 0.5;
+}
+.main-nav li:hover {
+  opacity: 1;
+}
+.main-nav li .bg {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.1);
+}
+.main-nav li.item1 {
+  left: 0;
+  top: 0;
+}
+.main-nav li.item1 .bg {
+  background: url("./assets/img1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.main-nav li.item2 {
+  left: 25%;
+  bottom: 0;
+}
+.main-nav li.item2 .bg {
+  background: url("./assets/img2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.main-nav li.item3 {
+  left: 50%;
+  top: 0;
+}
+.main-nav li.item3 .bg {
+  background: url("./assets/img3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.main-nav li.item4 {
+  left: 75%;
+  bottom: 0;
+}
+.main-nav li.item4 .bg {
+  background: url("./assets/img4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.main-nav li.item5 {
+  left: 100%;
+  top: 0;
+}
+.main-nav li.item5 .bg {
+  background: url("./assets/img5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/*# sourceMappingURL=main.css.map */
